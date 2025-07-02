@@ -1,0 +1,55 @@
+/*
+ * ===================================================
+ *  强力覆盖版 - Butterfly 卡片美化样式
+ *  适用于解决样式被主题默认样式覆盖的问题
+ * ===================================================
+ */
+
+/* ===== 卡片基础样式：磨砂玻璃效果 (增强版) ===== */
+/* 
+ * 通过在选择器前加上父级 ID (#recent-posts, #aside-content) 来提高优先级。
+ * 这是最标准的 CSS 覆盖方式。
+*/
+#recent-posts .recent-post-item,
+#aside-content .card-widget {
+  /*
+   * 使用 !important 是最后的手段，确保背景样式能强制生效。
+   * 这里设置一个半透明的白色背景。
+   * 0.6 是透明度，可调整。
+  */
+  background: rgba(255, 255, 255, 0.4) !important;
+  
+  /* 磨砂玻璃的核心效果 */
+  -webkit-backdrop-filter: saturate(120%) blur(8px);
+  backdrop-filter: saturate(120%) blur(8px);
+  
+  /* 其他视觉样式 */
+  border-radius: 20px !important; /* 同样使用 !important 确保圆角生效 */
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.1) !important; /* 确保阴影生效 */
+  border: 1px solid rgba(255, 255, 255, 0.3) !important; /* 确保边框生效 */
+  
+  /* 动画过渡，这个通常不需要 !important */
+  transition: all 0.3s ease-in-out;
+}
+
+/* ===== 鼠标悬停交互 ===== */
+/* 悬停效果的优先级通常足够，所以这里可以不用 !important */
+#recent-posts .recent-post-item:hover,
+#aside-content .card-widget:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 0 25px rgba(72, 122, 255, 0.3) !important; /* 悬停阴影也加强一下 */
+}
+
+
+/* ===== 暗黑模式下的样式 (增强版) ===== */
+[data-theme="dark"] #recent-posts .recent-post-item,
+[data-theme="dark"] #aside-content .card-widget {
+  background: rgba(30, 30, 30, 0.6) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 暗黑模式下的悬停发光效果 */
+[data-theme="dark"] #recent-posts .recent-post-item:hover,
+[data-theme="dark"] #aside-content .card-widget:hover {
+  box-shadow: 0 0 25px rgba(100, 180, 255, 0.3) !important;
+}
