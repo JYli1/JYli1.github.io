@@ -17,7 +17,7 @@
    * 这里设置一个半透明的白色背景。
    * 0.6 是透明度，可调整。
   */
-  background: rgba(255, 255, 255, 0.4) !important;
+  background: rgba(255, 255, 255, 0.75) !important;
   
   /* 磨砂玻璃的核心效果 */
   -webkit-backdrop-filter: saturate(120%) blur(8px);
