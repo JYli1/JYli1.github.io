@@ -17,7 +17,7 @@
    * 这里设置一个半透明的白色背景。
    * 0.6 是透明度，可调整。
   */
-  background: rgba(255, 255, 255, 0.75) !important;
+  background: rgba(255, 255, 255, 0.6) !important;
   
   /* 磨砂玻璃的核心效果 */
   -webkit-backdrop-filter: saturate(120%) blur(8px);
@@ -53,3 +53,20 @@
 [data-theme="dark"] #aside-content .card-widget:hover {
   box-shadow: 0 0 25px rgba(100, 180, 255, 0.3) !important;
 }
+
+  /* 文章详情页：从最外层容器做玻璃效果 */
+  #post {
+    background: rgba(255, 255, 255, 0.6);
+    -webkit-backdrop-filter: saturate(120%) blur(8px);
+    backdrop-filter: saturate(120%) blur(8px);
+    border-radius: 20px;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* 暗黑模式 */
+  [data-theme="dark"] #post {
+    background: rgba(30, 30, 30, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
